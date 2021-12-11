@@ -1,0 +1,32 @@
+.popup {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: $base*5;
+    padding-bottom: $base*5;
+    width: 100%;
+    background-color: $grey-700;
+    color: $white;
+    animation: popup-up 2s ease-in-out;
+
+    &__inner {
+        @include flex-sb-centerV;
+        gap: $base*10;
+    }
+
+    &__text {
+        font-size: $font-size-6;
+        line-height: $font-height-6;
+    }
+
+    @keyframes popup-up {
+        from { bottom: -100%; }
+
+        to { bottom: 0; }
+    }
+
+    &--disabled {
+        display: none;
+    }
+}

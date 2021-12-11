@@ -1,0 +1,29 @@
+// === FLEX ===
+@mixin flex-Hcenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-Vcenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-Hcenter-Vcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-Hcenter-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column-Vcenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+// === / FLEX ===

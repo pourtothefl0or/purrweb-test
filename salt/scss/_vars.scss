@@ -1,0 +1,51 @@
+// === FUNCTIONS ===
+@function strip-unit($num) { @return $num / ($num * 0 + 1); }
+@function rem($num) { @return (strip-unit($num) / 16) * 1rem; }
+// === / FUNCTIONS ===
+
+// === VARS ===
+$base: rem(4px);
+
+// >>> COLORS
+$color-white: #fff;
+$color-black: #000;
+$color-orange: #ff8b00;
+$color-purple: #7050e5;
+$color-purple-dark: #5634d1;
+$color-grey-50: #f8f8f8;
+$color-grey-500: #878787;
+$color-grey-800: #363636;
+$color-grey-850: #252525;
+
+// >>> FONT-SIZE
+$font-size-xl: rem(60px);
+$font-size-lg: rem(40px);
+$font-size-md: rem(16px);
+$font-size-sm: rem(15px);
+$font-size-xs: rem(14px);
+
+// >>> FONT-WEIGHT
+$font-weight-extrabold: 800;
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-regular: 400;
+
+// >>> DECORATIONS
+$border-radius: 4px;
+$transition: .4s;
+
+// >>> HORIZONTAL CONTAINER
+$horizontal-container-xl: $base*56;
+$horizontal-container-lg: $base*30;
+$horizontal-container-md: $base*15;
+$horizontal-container-xs: $base*5;
+
+// >>> BREAKPOINTS
+$breakpoint-xxxl: 1600px;
+$breakpoint-xxl: 1400px;
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$breakpoint-xs: 375px;
+// === / VARS ===

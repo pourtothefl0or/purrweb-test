@@ -1,0 +1,18 @@
+.sections-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    // GROW
+    &::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: 35%;
+        z-index: -1;
+        width: 100%;
+        height: $base*265;
+        background-image: url(../img/header/header-glow-01.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

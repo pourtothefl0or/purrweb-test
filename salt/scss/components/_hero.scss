@@ -1,0 +1,152 @@
+.hero {
+    padding: $base*23.5 0 $base*12.55 0;
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) { padding: $base*(23/2) 0 $base*(12/2) 0; }
+    // === / MEDIA ===
+
+    .container {
+        position: relative;
+        padding: 0 $base*75.5;
+
+        // === MEDIA ===
+        @media (max-width: $breakpoint-xxl) { padding: 0 $horizontal-container-lg; }
+        @media (max-width: $breakpoint-lg) { padding: 0 $horizontal-container-md; }
+        @media (max-width: $breakpoint-md) { padding: 0 $horizontal-container-xs; }
+        // === / MEDIA ===
+    }
+    
+    // === SLIDER ===
+    &-slider {
+        margin-bottom: $base*34;
+    }
+
+    &-item {
+        display: flex;
+        justify-content: space-between;
+        
+        &__desc {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-shrink: 0;
+            color: $color-white;
+
+            &-title {
+                margin-bottom: $base*2;
+                font-size: rem(55px);
+            }
+
+            &-text {
+                margin-bottom: $base*11;
+                max-width: $base*115;
+                font-weight: $font-weight-semibold;
+                line-height: 1.85;
+            }
+        }
+
+        &__img {
+            justify-self: center;
+            align-self: center;
+            width: $base*37.25;
+            height: $base*30.25;
+        }
+
+        // === PIXELPERFECT OFFSET ===
+        @media (min-width: $breakpoint-xxxl) {
+            &__desc { &-text, .btn { margin-left: $base; } }
+            &__img { margin: $base*3.8 7% 0 0; }
+        }
+        // === / PIXELPERFECT OFFSET ===
+    }
+
+    &-pagi, .swiper-pagination-bullets {
+        position: absolute;
+        top: 15.25%;
+        right: $base*13.75;
+        bottom: unset;
+        left: unset;
+        @include flex-column-Vcenter;
+        gap: $base*4.25;
+        width: unset;
+
+        &__item {
+            display: block;
+            width: $base*4;
+            height: $base*4.5;
+            background-image: url(../img/hero/hero-pagi.webp);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            cursor: pointer;
+
+            &--active {
+                width: $base*4.75;
+                height: $base*5.5;
+                background-image: url(../img/hero/hero-pagi-active.webp);
+            }
+        }
+    }
+    // === / SLIDER ===
+
+    // === MORE ===
+    &-more {
+        @include flex-Hcenter;
+
+        a {
+            @include flex-column-Vcenter;
+        }
+
+        &__subtitle {
+            margin-bottom: $base*5;
+            color: $color-white;
+            font-size: $font-size-sm;
+        }
+
+        &__icon {
+            width: $base*15.25;
+            height: $base*17.75;
+            animation: scroll-down .6s infinite alternate;
+
+            @keyframes scroll-down {
+                0% { transform: translateY(0); }
+                100% { transform: translateY($base*3); }
+            }
+        }
+
+    }
+    // === / MORE ===
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-lg) {
+        &-item {
+            &__desc {
+                flex-shrink: unset;
+                width: 100%;
+            }
+        }
+
+        &-pagi, .swiper-pagination-bullets {
+            top: unset;
+            bottom: $base*42;
+            left: 50%;
+            transform: translateX(-50%);
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: $breakpoint-md) {
+        &-item {
+            &__desc {
+                align-items: center;
+                text-align: center;
+            }
+
+            &__img {
+                display: none;
+            }
+        }
+    }
+    // === / MEDIA ===
+}

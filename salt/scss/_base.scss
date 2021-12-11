@@ -1,0 +1,43 @@
+// === BASE ===
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) { font-size: 14px; }
+    @media (max-width: $breakpoint-sm) { font-size: 12.5px; }
+    // === / MEDIA ===
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $color-white;
+    @include proximanova();
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-md;
+}
+
+h2 {
+    font-size: $font-size-xl;
+}
+
+a {
+    color: $color-white;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    background: 0;
+    border: 0;
+}
+// === / BASE ===

@@ -1,0 +1,151 @@
+.what-we-do {
+    padding: $base*36.5 0 $base*24.5 0;
+    background-color: $color-grey-50;
+    color: $color-purple;
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {  padding: $base*(36/2) 0 $base*(24/2) 0; }
+    // === / MEDIA ===
+
+    .container {
+        padding: 0 $base*84;
+
+        // === MEDIA ===
+        @media (max-width: $breakpoint-xxl) { padding: 0 $horizontal-container-lg; }
+        @media (max-width: $breakpoint-lg) { padding: 0 $horizontal-container-md; }
+        @media (max-width: $breakpoint-md) { padding: 0 $horizontal-container-xs; }
+        // === / MEDIA ===
+    }
+
+    &__title {
+        position: relative;
+        margin: 0 $base*5 $base*16.5 0;
+        text-align: right;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: $base*-7;
+            right: $base*-7;
+            width: $base*11.5;
+            height: $base*11.5;
+            background: url(../img/what-we-do/what-title-angle.webp) no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    // === CARDS ===
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax($base*71, 1fr));
+        gap: $base*12 $base*7.7;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        &-icon {
+            align-self: center;
+            margin-bottom: $base*7;
+            height: $base*37.5;
+
+            &-img {
+                object-fit: contain;
+            }
+        }
+
+        // === ICONS ===
+        $parent: &;
+        &:nth-of-type(1) {
+            #{$parent}-icon {
+                &-img {
+                    width: $base*35.5;
+                    height: $base*36.5;
+                }
+            }
+        }
+
+        &:nth-of-type(2) {
+            #{$parent}-icon {
+                &-img {
+                    width: $base*40;
+                    height: $base*37.5;
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            #{$parent}-icon {
+                &-img {
+                    width: $base*37.5;
+                    height: $base*37.5;
+                }
+            }
+        }
+
+        &:nth-of-type(4) {
+            #{$parent}-icon {
+                &-img {
+                    width: $base*33;
+                    height: $base*34.75;
+                }
+            }
+        }
+
+        &:nth-of-type(5) {
+            #{$parent}-icon {
+                &-img {
+                    width: $base*47.75;
+                    height: $base*31.75;
+                }
+            }
+        }
+
+        &:nth-of-type(6) {
+            #{$parent}-icon {
+                &-img {
+                    width: $base*52.5;
+                    height: $base*27;
+                }
+            }
+        }
+        // === / ICONS ===
+
+        &-title {
+            margin-bottom: $base;
+            font-size: rem(17.5px);
+            text-transform: uppercase;
+        }
+
+        &-text {
+            color: $color-grey-500;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-regular;
+            line-height: 1.46;
+        }
+    }
+    // === / CARDS ===
+
+    // === PIXELPERFECT OFFSET ===
+    @media (min-width: $breakpoint-xxxl) {
+        &__cards { margin-left: $base*3.5; }
+        &__title {
+            margin-right: $base*2.5;
+            &::after { right: $base*-12.25; }
+        }
+
+        &__item {
+            &-text { br { display: unset; } }
+
+            $parent: &;
+            &:nth-of-type(1) { #{$parent}-icon { &-img { margin: $base 0 0 $base*-15; } } }
+            &:nth-of-type(2) { #{$parent}-icon { &-img { margin: 0 0 0 $base*-3.5; } } }
+            &:nth-of-type(3) { #{$parent}-icon { &-img { margin: 0 0 0 $base*-3.5; } } }
+            &:nth-of-type(4) { #{$parent}-icon { &-img { margin: $base*3.5 0 0 $base*-9.25; } } }
+            &:nth-of-type(5) { #{$parent}-icon { &-img { margin: $base*5.5 0 0 $base*-3.5; } } }
+            &:nth-of-type(6) { #{$parent}-icon { &-img { margin: $base*10.25 0 0 $base*-3.5; } } }
+        }
+    }
+    // === / PIXELPERFECT OFFSET ===
+}

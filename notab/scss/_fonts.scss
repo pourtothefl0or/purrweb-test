@@ -1,0 +1,26 @@
+@mixin font-face($font-family, $url, $format, $weight, $style) {
+    @font-face {
+        font-family: "#{$font-family}";
+        src: url('../fonts/#{$url}.#{$format}') format("#{$format}");
+        font-weight: #{$weight};
+        font-display: swap;
+        font-style: $style;
+    }
+}
+
+@include font-face("Noto Sans", "NotoSans/NotoSansRegular", "woff2", 400, normal);
+@include font-face("Noto Sans", "NotoSans/NotoSansMedium", "woff2", 500, normal);
+@include font-face("Montserrat", "Montserrat/MontserratBold", "woff2", 600, normal);
+@include font-face("Roboto", "Roboto/RobotoMedium", "woff2", 500, normal);
+
+@mixin noto-sans {
+    font-family: "Noto Sans", sans-serif;
+}
+
+@mixin montserrat {
+    font-family: "Montserrat", sans-serif;
+}
+
+@mixin roboto {
+    font-family: "Roboto", sans-serif;
+}

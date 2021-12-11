@@ -1,0 +1,108 @@
+.header {
+    padding: $base*8 0;
+    color: $color-white;
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) { padding: $base*(8/2) 0; }
+    // === / MEDIA ===
+
+    &__inner {
+        @include flex-Hcenter-sb;
+    }
+
+    .logo {
+        margin: 0;
+        line-height: 0;
+
+        &__img {
+            width: $base*19.5;
+            height: $base*25;
+        }
+    }
+}
+
+.nav {
+    &__list {
+        @include flex-Vcenter;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: $base*7.4;
+        }
+    }
+
+    &__link {
+        position: relative;
+        font-size: $font-size-sm;
+        text-transform: uppercase;
+
+        &::after {
+            content: '';
+            box-sizing: content-box; 
+            position: absolute;
+            left: 50%;
+            bottom: $base*-2;
+            transform: translateX(-50%);
+            padding: 0 $base*1.25;
+            width: 100%;
+            height: 3px;
+            background-color: $color-orange;
+            visibility: hidden;
+            opacity: 0;
+            transition: $transition;
+        }
+
+        &:hover, &--active {
+            &::after {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__btn-burger {
+        display: none;
+    }
+
+    // === PIXELPERFECT OFFSET ===
+    @media (min-width: $breakpoint-xxxl) {
+        margin-top: $base*3.6;
+    }
+    // === / PIXELPERFECT OFFSET ===
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-lg) {
+        &__list {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1;
+
+            padding: $base*20;
+            width: 100vw;
+            height: 100vh;
+
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+
+            background-color: $color-purple;
+
+            &--visible { display: flex; }
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin: 0 0 $base*20 0;
+            }
+        }
+
+        &__btn-burger {
+            position: relative;
+            z-index: 2;
+            display: block;
+        }
+    }
+    // === / MEDIA ===
+}

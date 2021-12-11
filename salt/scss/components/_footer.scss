@@ -1,0 +1,182 @@
+.footer {
+    // === MAIN ===
+    &-main {
+        position: relative;
+        padding: $base*13.5 0 $base*10.5 0;
+        background-color: $color-grey-800;
+
+        // === MEDIA ===
+        @media (max-width: $breakpoint-md) { padding: $base*(13/2) 0 $base*(10/2) 0; }
+        // === / MEDIA ===
+
+        &__inner {
+            display: flex;
+            gap: 9.2%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: $base*6.75;
+            right: $base*8.5;
+            z-index: 0;
+            width: $base*18.75;
+            height: $base*21.5;
+            background: url(../img/footer/footer-logo.svg) no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        gap: $base*5;
+    }
+
+    // === TWITTER ===
+    &-twitter {
+        box-sizing: content-box;
+
+        &, iframe { width: $base*75; }
+
+        &__header {
+            display: grid;
+            grid-template-columns: $base*15 1fr;
+            grid-template-areas: "a b" "a b";
+            color: $color-white;
+            background-color: $color-purple;
+            font-weight: 400;
+
+            &-logo {
+                grid-area: a;
+                padding: $base*2.75;
+                width: $base*9.5;
+                height: $base*9.5;
+                background-color: $color-purple-dark;
+            }
+    
+            &-link {
+                grid-area: b;
+                padding: $base*2.5 0 0 $base*3;
+                font-size: rem(23px);
+                transition: color $transition;
+
+                span {
+                    display: block;
+                    font-size: $font-size-xs;
+                }
+
+                &:hover { color: $color-orange; }
+            }
+        }        
+
+        // === PIXELPERFECT OFFSET ===
+        @media (min-width: $breakpoint-xxxl) {
+            margin-top: $base;
+        }
+        // === / PIXELPERFECT OFFSET ===
+    }
+    // === / TWITTER ===
+
+    // === COLUMN ===
+    &-column {
+        text-transform: uppercase;
+
+        &__title {
+            @include flex-Vcenter;
+            margin-bottom: $base*3.2;
+            color: $color-orange;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-bold;
+
+            &::before {
+                content: '';
+                margin-right: $base*2;
+                width: $base*2.25;
+                height: $base*2.5;
+                display: block;
+                background: url(../img/footer/footer-column-title.webp) no-repeat center;
+                background-size: contain;
+            }
+        }
+
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: $base*1.5;
+            }
+        }
+
+        &__link {
+            font-size: $font-size-xs;
+            font-weight: $font-weight-regular;
+            transition: color $transition;
+
+            &-name {
+                margin-right: $base*4;
+                text-transform: uppercase;
+            }
+
+            &--lowercase {
+                text-transform: lowercase;
+            }
+
+            &:hover {
+                color: $color-orange;
+            }
+        }
+
+        // === PIXELPERFECT OFFSET ===
+        @media (min-width: $breakpoint-xxxl) {
+            $parent: &;
+            &:nth-of-type(2) { margin-right: $base*-8; }
+            
+            &:nth-of-type(3) {
+                margin-right: -$base;
+
+                #{$parent}__item { &:not(:last-child) { margin-bottom: $base*2.5; }}
+            }
+        }
+        // === / PIXELPERFECT OFFSET ===
+    }
+    // === / COLUMN ===
+    // === / MAIN ===
+
+    // === BOTTOM ===
+    &-bottom {
+        padding: $base*2.5 0;
+        background-color: $color-grey-850;
+
+        &__copyright {
+            color: $color-white;
+            font-size: rem(11px);
+            font-weight: $font-weight-regular;
+            text-align: center;
+
+            span {
+                margin: 0 $base;
+
+                img {
+                    width: $base*2.25;
+                    height: $base*2.5;
+                }
+            }
+        }
+    }
+    // === / BOTTOM ===
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-sm) {
+        &-main {
+            &__inner {
+                flex-direction: column;
+                gap: $base*5;
+            }
+        }
+
+        &-twitter { &, iframe { width: 100%; } }
+        &__nav { flex-direction: column; }
+    }
+    // === / MEDIA ===
+}

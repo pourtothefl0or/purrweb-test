@@ -1,0 +1,12 @@
+.video {
+    iframe {
+        border: 0;
+        
+        // === MEDIA ===
+        @media (max-width: $breakpoint-md) {
+            width: 80vw;
+            height: 40vh;
+        }
+        // === / MEDIA ===
+    }
+}

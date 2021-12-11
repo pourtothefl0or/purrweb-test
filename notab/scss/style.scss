@@ -1,0 +1,184 @@
+// === IMPORTS ===
+@import "_fonts";
+@import "_flex";
+@import "_settings";
+// === / IMPORTS ===
+
+// === BASE ===
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: 12px;
+    }
+}
+
+body {
+    color: $white;
+    background-color: $black;
+    @include noto-sans;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-5;
+    line-height: $font-height-5;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $font-size-6;
+        line-height: $font-height-6;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include montserrat;
+    font-weight: $font-weight-bold;
+}
+
+h1 {
+    font-size: $font-size-1;
+    line-height: $font-height-1;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $font-size-3;
+        line-height: $font-height-3;
+    }
+}
+
+h2 {
+    margin-bottom: $h2-mb;
+    font-size: $font-size-2;
+    line-height: $font-height-2;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $font-size-4;
+        line-height: $font-height-4;
+    }
+}
+
+a {
+    color: inherit;
+    transition: $transition;
+
+    &:hover {
+        color: $purple;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    color: inherit;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+}
+// === / BASE ===
+
+// === UNI ===
+.container {
+    margin: 0 auto;
+    padding: 0 100px;
+    max-width: 1440px;
+
+    @media (max-width: $breakpoint-xl) {
+        padding: 0 50px;
+    }
+
+    @media (max-width: $breakpoint-lg) {
+        padding: 0 25px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+        padding: 0 15px;
+    }
+}
+
+.btn {
+    @include noto-sans;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    @include border($border-radius-2, $white);
+    transition: $transition;
+
+    &--form {
+        padding: $base*6;
+        @include montserrat;
+        font-size: $font-size-4;
+        line-height: $font-height-4;
+        font-weight: $font-weight-bold;
+    }
+
+    &--popup {
+        padding: $base*4 $base*13;
+        background-color: $grey-600;
+    }
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+    }
+}
+
+.form {
+    &-input {
+        padding: $base*6;
+        @include noto-sans;
+        font-weight: $font-weight-regular;
+        font-size: $font-size-5;
+        line-height: $font-height-5;
+        @include border($border-radius-2, $grey-500);
+
+        &--textarea {
+            min-height: $base*50;
+            resize: vertical;
+        }
+
+        &::placeholder {
+            color: $grey-400;
+        }
+    }
+
+    .error {
+        border-width: 2px;
+        border-color: $red;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+// === / UNI ===
+
+// === COMPONENTS ===
+@import "components/_sections-wrapper";
+@import "components/_header";
+@import "components/_hero";
+@import "components/_app";
+@import "components/_cards";
+@import "components/_our-mission";
+@import "components/_id-scanner";
+@import "components/_integration";
+@import "components/_qr-code";
+@import "components/_generate";
+@import "components/_ordering";
+@import "components/_promo";
+@import "components/_get";
+@import "components/_footer";
+@import "components/_popup";
+// === / COMPONENTS ===

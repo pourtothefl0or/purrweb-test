@@ -1,0 +1,89 @@
+.our-mission {
+    position: relative;
+    padding-top: $base*35;
+    padding-bottom: $base*118;
+    overflow: hidden;
+
+    &__inner {
+        @include flex-feH;
+    }
+
+    &-description {
+        flex-basis: $base*82;
+
+        &__title {
+            position: relative;
+            
+            // GROW
+            &::before {
+                content: '';
+                position: absolute;
+                top: -75%;
+                left: 30%;
+                z-index: -1;
+                width: 100%;
+                height: $base*71;
+                background-image: url(../img/our-mission/our-mission-grow-01.webp);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &__text {
+            max-width: $base*80;
+        }
+    }
+
+    // ITEMS
+    &-items {
+        position: absolute;
+        top: $base*36;
+        right: 48%;
+        z-index: -1;
+        
+        &__img {
+            width: $base*250;
+            height: $base*125;
+            object-fit: contain;
+        }
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {
+        padding-top: $base*(35/2);
+        padding-bottom: $base*(118/2);
+        
+        &__inner {
+            flex-direction: column;
+            justify-content: normal;
+        }
+
+        &-description {
+            flex-basis: 100%;
+            margin-bottom: $mobile-description-mb;
+            
+            &__title {
+                &::before {
+                    top: $base*-30;
+                    left: -10%;
+                }
+            }
+
+            &__text {
+                max-width: 100%;
+            }
+        }
+
+        &-items {
+            position: static;
+            @include flex-centerH-centerV;
+            padding-top: $base*40;
+
+            &__img {
+                width: $base*167; // items-img-settings()
+                height: $base*83; // items-img-settings()
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

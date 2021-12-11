@@ -1,0 +1,121 @@
+.product {
+    padding: $base*26 0 $base*30 0;
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {  padding: $base*(26/2) 0 $base*(30/2) 0; }
+    // === / MEDIA ===
+
+    .container {
+        padding: 0 $base*34.3 0 $base*40;
+
+        // === MEDIA ===
+        @media (max-width: $breakpoint-xxl) { padding: 0 $horizontal-container-lg; }
+        @media (max-width: $breakpoint-lg) { padding: 0 $horizontal-container-md; }
+        @media (max-width: $breakpoint-md) { padding: 0 $horizontal-container-xs; }
+        // === / MEDIA ===
+    }
+
+    &__inner {
+        @include flex-Hcenter-sb;
+        gap: $base*5;
+    }
+
+    // === DESCRIPTION ===
+    &-desc {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &__title {
+            margin-bottom: $base*2.5;
+            color: $color-purple;
+            font-size: $font-size-lg;
+        }
+        
+        &__text {
+            margin: 0 0 $base*7 $base;
+            max-width: $base*116.25;
+            color: $color-grey-500;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-regular;
+            line-height: 1.46;
+        }
+
+        .btn {
+            padding: $base*4.5 $base*12;
+            margin-left: $base/2;
+        }
+    }
+    // === / DESCRIPTION ===
+
+    // === VIDEO ===
+    &-video {
+        flex-basis: 55.5%;
+        width: $base*181;
+        height: $base*113;
+        background: url(../img/product/product-video-bg.webp) no-repeat center;
+        background-size: cover;
+
+        &__link {
+            @include flex-Hcenter-Vcenter;
+            flex-direction: column;
+            padding: $base*2;
+            width: 100%;
+            height: 100%;
+            color: $color-white;
+            @include raleway;
+            cursor: pointer;
+            transition: box-shadow $transition;
+
+            &:hover {
+                box-shadow: 0 0 10px 5px rgba($color-black, .5);
+            }
+
+            &-icon {
+                margin-bottom: $base*5;
+                width: $base*21.5;
+                height: $base*21.5;
+            }
+
+            &-subtitle {
+                margin-bottom: $base*2;
+                font-size: $font-size-md;
+                font-weight: $font-weight-semibold;
+                letter-spacing: 1.8px;
+            }
+            
+            &-title {
+                font-size: $font-size-md*2;
+                font-weight: $font-weight-extrabold;
+                letter-spacing: 3.5px;
+            }
+        }
+    }
+    // === / VIDEO ===
+
+    // === PIXELPERFECT OFFSET ===
+    @media (min-width: $breakpoint-xxxl) {
+        &-desc { margin-top: $base*-12.5; }
+        &-video { &__link { padding-top: $base*15; } }
+    }
+    // === / PIXELPERFECT OFFSET ===
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {
+        &__inner {
+            flex-direction: column;
+            gap: $base*10;
+        }
+
+        &-desc {
+            align-items: center;
+            text-align: center;
+        }
+
+        &-video {
+            flex-basis: auto;
+            width: 100%;
+        }
+    }
+    // === / MEDIA ===
+}

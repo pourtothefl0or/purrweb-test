@@ -1,0 +1,71 @@
+.hero {
+    padding-top: $base*30;
+    padding-bottom: $base*48;
+
+    &__inner {
+        position: relative;
+    }
+
+    &-description {
+        max-width: 65%;
+        
+        &__title {
+            margin-bottom: $base*32;
+        }
+
+        &__text {
+            position: relative;
+            margin-left: $base*26;
+            max-width: $base*83;
+
+            // SLASH
+            &::before {
+                content: '';
+                position: absolute;
+                top: $base*-46;
+                left: $base*-50;
+                z-index: -1;
+                width: $base*80;
+                height: $base*81;
+                background-image: url(../img/hero/hero-text-slash.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    // ITEMS
+    &-items {
+        position: absolute;
+        top: $base*-31;
+        left: 73%;
+        z-index: -1;
+
+        &__img {
+            @include items-img-settings;
+        }
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {
+        &-description {    
+            &__title {
+                margin-bottom: $base*16;
+            }
+
+            &__text {
+                margin-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        &-items {
+            &__img {
+                transform: scale(.8);
+            }
+        }
+    }
+}

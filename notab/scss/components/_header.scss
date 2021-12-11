@@ -1,0 +1,52 @@
+.header {
+    padding-top: $base*10;
+    padding-bottom: $base*10;
+
+    &__inner {
+        @include flex-centerV;
+        gap: $base*28;
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {
+        padding-top: $base*(10/2);
+        padding-bottom: $base*(10/2);
+        
+        &__inner {
+            gap: 0;
+            justify-content: space-between;
+        }
+    }
+}
+
+.logo {
+    @include flex-centerV;
+
+    &__img {
+        margin-right: $base*5;
+        width: $base*20;
+        height: $base*19;
+    }
+
+    &__text {
+        width: $base*24;
+        height: $base*6;
+    }
+}
+
+.nav {
+    &__link {
+        @include flex-centerV;
+        transition: $transition;
+
+        &-icon {
+            margin-right: $base*3;
+        }
+
+        &:hover {
+            path {
+                fill: currentColor;
+            }
+        }
+    }
+}

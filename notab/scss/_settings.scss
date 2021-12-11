@@ -1,0 +1,80 @@
+// === FUNCTIONS ===
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function rem($num) {
+    @return (strip-unit($num) / 16) * 1rem;
+}
+// === / FUNCTIONS ===
+
+// === VARIABLES ===
+$base: rem(4px);
+
+$black: #000000;
+$white: #FFFFFF;
+$grey-400: #BFBFBF;
+$grey-500: #7F7F7F;
+$grey-600: #373D48;
+$grey-700: #212834;
+$purple: #687AF0;
+$red: #FF0000;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+$font-size-1: 64px; // H1 1440px
+$font-size-2: 51px; // H2 1440px
+$font-size-3: 35px; // H1 375px
+$font-size-4: 24px; // H2 375px
+$font-size-5: 18px; // P 1440px
+$font-size-6: 16px; // P 375px
+
+$font-height-1: 70px; // H1 1440px
+$font-height-2: 62px; // H2 1440px
+$font-height-3: 40px; // H1 375px
+$font-height-4: 29px; // H2 375px
+$font-height-5: 25px; // P 1440px
+$font-height-6: 22px; // P 375px
+
+$h2-mb: 24px;
+
+$border-radius-1: 22px;
+$border-radius-2: 10px;
+
+$transition: .25s;
+
+$linear-gradient-1: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+$linear-gradient-2: linear-gradient(360deg, #000000 6.8%, rgba(0, 0, 0, 0) 51.62%, #000000 97.38%);
+
+$gap: $base*8;
+$mobile-description-mb: $base*20;
+// === / VARIABLES ===
+
+// === MIXINS ===
+@mixin border($radius, $color) {
+    border: 1px solid $color;
+    border-radius: $radius;
+}
+
+@mixin img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin items-img-settings {
+    width: $base*83;
+    height: $base*167;
+    object-fit: contain;
+}
+// === / MIXINS ===
+
+// === BREAKPOINTS ===
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$breakpoint-l: 375px;
+// === / BREAKPOINTS ===

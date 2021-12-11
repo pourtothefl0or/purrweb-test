@@ -1,0 +1,127 @@
+.qr-code {
+    position: relative;
+    padding-bottom: $base*95;
+    overflow: hidden;
+
+    $bg-height: $base*150; // BG-HEIGHT VAR
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: $bg-height; // BG-HEIGHT
+
+        // BG TEXT
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 4%;
+            z-index: 1;
+            width: $base*35;
+            height: $base*14;
+            background-image: url(../img/qr-code/qr-code-bg-text.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        // GRADIENT SHADOW
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: -10%;
+            left: 0;
+            background: $linear-gradient-1;
+        }
+        
+        &__img {
+            @include img-cover;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        @include flex-fsH;
+        padding-top: $bg-height - $base*15; // BG-HEIGHT
+    }
+
+    &-description {
+        flex-basis: 41%;
+
+        &__text {
+            max-width: $base*78;
+            margin-bottom: $base*15;
+        }
+    }
+
+    // ITEMS
+    &-items {
+        position: absolute;
+        top: $base*56;
+        left: 48%;
+        z-index: -1;
+        display: flex;
+        gap: $base*8;
+
+        &__img {
+            @include items-img-settings;
+
+            &:nth-of-type(2) {
+                margin-top: $base*85;
+            }
+        }
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-lg) {
+        padding-bottom: $base*(95/2);
+        
+        &-bg {
+            height: $base*125;
+        }
+
+        &__inner {
+            flex-direction: column;
+            padding-top: $base*125  - $base*15;
+        }
+
+        &-description {
+            flex-basis: 100%;
+            margin-bottom: $mobile-description-mb;
+    
+            &__text {
+                max-width: 100%;
+            }
+        }
+
+        &-items {
+            position: static;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &__img {
+                &:nth-of-type(2) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-l) {
+        &-bg {
+            &__img {
+                object-position: right;
+            }
+
+            // BG TEXT
+            &::before {
+                left: 12%;
+            }
+        }
+    }
+}

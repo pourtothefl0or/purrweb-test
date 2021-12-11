@@ -1,0 +1,57 @@
+.integration {
+    position: relative;
+    padding-top: $base*38;
+    padding-bottom: $base*113;
+    overflow: hidden;
+
+    &__inner {
+        @include flex-fsH;
+    }
+
+    &-description {
+        flex-basis: 41%;
+
+        &__text {
+            max-width: $base*96;
+        }
+    }
+
+    // ITEMS
+    &-items {
+        position: absolute;
+        top: $base*14;
+        left: 43%;
+        z-index: -1;
+
+        &__img {
+            width: $base*176;
+            height: $base*131;
+            object-fit: contain;
+        }
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {
+        padding-top: $base*(38/2);
+        padding-bottom: $base*(113/2);
+
+        &__inner {
+            flex-direction: column;
+            justify-content: normal;
+        }
+
+        &-description {
+            flex-basis: 100%;
+            margin-bottom: $mobile-description-mb;
+    
+            &__text {
+                max-width: 100%;
+            }
+        }
+
+        &-items {
+            position: static;
+            @include flex-centerH-centerV;
+        }
+    }
+}

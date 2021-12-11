@@ -1,0 +1,49 @@
+.cards {
+    padding-top: $base*25;
+    padding-bottom: $base*25;
+
+    &-list {
+        @include flex-centerH;
+        gap: $base*16;
+
+        &__item {
+            flex-basis: 50%;
+            @include flex-column-centerH-fs;
+            padding: $base*16 $base*13;
+            @include border($border-radius-1, $grey-500);
+
+            &-title {
+                font-size: $font-size-3;
+                line-height: $font-height-3;
+            }
+        }
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-lg) {
+        padding-top: $base*(25/2);
+        padding-bottom: $base*(25/2);
+
+        &-list {
+            gap: $gap;
+
+            &__item {
+                &-title {
+                    font-size: $font-size-4;
+                    line-height: $font-height-4;
+                }
+            }
+        }
+    }
+
+    // === MEDIA ===
+    @media (max-width: $breakpoint-md) {
+        &-list {
+            flex-wrap: wrap;
+
+            &__item {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
