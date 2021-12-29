@@ -23,8 +23,8 @@ const swiper = new Swiper(".hero-slider", {
 });
 
 const sliderHero = document.querySelector('.hero-slider');
-sliderHero.addEventListener("mouseleave", function(e) { swiper.autoplay.start(); });
-sliderHero.addEventListener("mouseenter", function(e) { swiper.autoplay.stop(); });
+sliderHero.addEventListener("mouseleave", function (e) { swiper.autoplay.start(); });
+sliderHero.addEventListener("mouseenter", function (e) { swiper.autoplay.stop(); });
 // === / SWIPER ===
 
 
@@ -34,26 +34,29 @@ const btns = document.querySelectorAll('#btn-modal'),
     modals = document.querySelectorAll('.modal');
 
 btns.forEach((el) => {
-	el.addEventListener('click', (e) => {
-		let path = e.currentTarget.getAttribute('data-path');
+    el.addEventListener('click', (e) => {
+        let path = e.currentTarget.getAttribute('data-path');
 
-		modals.forEach((el) => {
-			modalOverlay.classList.remove('modal-overlay--visible');
-			el.classList.remove('modal--visible');
-		});
+        modals.forEach((el) => {
+            modalOverlay.classList.remove('modal-overlay--visible');
+            el.classList.remove('modal--visible');
+            body.style.overflowY = '';
+        });
 
-		document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
-		modalOverlay.classList.add('modal-overlay--visible');
-	});
+        document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
+        modalOverlay.classList.add('modal-overlay--visible');
+        body.style.overflowY = 'hidden';
+    });
 });
 
 modalOverlay.addEventListener('click', (e) => {
-	if (e.target == modalOverlay) {
-		modalOverlay.classList.remove('modal-overlay--visible');
-		modals.forEach((el) => {
-			el.classList.remove('modal--visible');
-		});
-	}
+    if (e.target == modalOverlay) {
+        modalOverlay.classList.remove('modal-overlay--visible');
+        modals.forEach((el) => {
+            el.classList.remove('modal--visible');
+            body.style.overflowY = 'hidden';
+        });
+    }
 });
 // === / MODAL ===
 
@@ -79,8 +82,5 @@ buttonBurger.addEventListener('click', () => {
 const resetNav = () => {
     buttonBurger.classList.remove('btn-burger--close');
     navList.classList.remove('nav__list--visible');
-    body.style.overflowY = '';
 }
-
-window.addEventListener('resize', resetNav);
 // === / BURGER ===

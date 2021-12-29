@@ -11,6 +11,30 @@
     // === / MEDIA ===
 }
 
+.visually-hidden {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.btn-reset {
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .btn {
     // === MAIN ===
     &-main {
@@ -46,29 +70,5 @@
         }
     }
     // === / BURGER ===
-}
-
-.visually-hidden {
-    position: absolute;
-    margin: -1px;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    border: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
-
-.btn-reset {
-    padding: 0;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.list-reset {
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 // === / UNI ===
