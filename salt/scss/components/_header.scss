@@ -61,7 +61,7 @@
         }
     }
 
-    &__btn-burger {
+    .btn-burger {
         display: none;
     }
 
@@ -85,7 +85,7 @@
             
             display: none;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             
             background-color: $color-purple;
             overflow-y: scroll;
@@ -99,10 +99,15 @@
             }
         }
 
-        &__btn-burger {
-            position: relative;
-            z-index: 2;
+        .btn-burger {
             display: block;
+    
+            &--close {
+                position: fixed;
+                top: $base*(8/2);
+                right: $horizontal-container-xs;
+                z-index: 2;
+            }
         }
     }
     // === / MEDIA ===
