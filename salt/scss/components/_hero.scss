@@ -33,11 +33,13 @@
             color: $color-white;
 
             &-title {
+                margin-top: 0;
                 margin-bottom: $base*2;
                 font-size: rem(55px);
             }
 
             &-text {
+                margin-top: 0;
                 margin-bottom: $base*11;
                 max-width: $base*115;
                 font-weight: $font-weight-semibold;
@@ -98,6 +100,7 @@
         }
 
         &__subtitle {
+            margin-top: 0;
             margin-bottom: $base*5;
             color: $color-white;
             font-size: $font-size-sm;

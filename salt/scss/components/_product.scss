@@ -27,6 +27,7 @@
         align-items: flex-start;
 
         &__title {
+            margin-top: 0;
             margin-bottom: $base*2.5;
             color: $color-purple;
             font-size: $font-size-lg;

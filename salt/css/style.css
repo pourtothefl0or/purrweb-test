@@ -66,13 +66,12 @@ html {
 }
 
 *, *::before, *::after {
-  margin: 0;
-  padding: 0;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
 
 body {
+  margin: 0;
   background-color: #fff;
   font-family: "Proxima Nova", sans-serif;
   font-weight: 600;
@@ -86,15 +85,6 @@ h2 {
 a {
   color: #fff;
   text-decoration: none;
-}
-
-li {
-  list-style: none;
-}
-
-button {
-  background: 0;
-  border: 0;
 }
 
 .container {
@@ -165,6 +155,19 @@ button {
   border: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.btn-reset {
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .general-wrapper {
@@ -355,11 +358,13 @@ button {
 }
 
 .hero-item__desc-title {
+  margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 3.4375rem;
 }
 
 .hero-item__desc-text {
+  margin-top: 0;
   margin-bottom: 2.75rem;
   max-width: 28.75rem;
   font-weight: 600;
@@ -445,6 +450,7 @@ button {
 }
 
 .hero-more__subtitle {
+  margin-top: 0;
   margin-bottom: 1.25rem;
   color: #fff;
   font-size: 0.9375rem;
@@ -568,11 +574,13 @@ button {
 }
 
 .stats__item-title {
+  margin-top: 0;
   margin-bottom: 0.6rem;
   font-size: 3.75rem;
 }
 
 .stats__item-text {
+  margin: 0;
   font-size: 0.9375rem;
   text-transform: uppercase;
   line-height: 1.35;
@@ -697,12 +705,14 @@ button {
 }
 
 .what-we-do__item-title {
+  margin-top: 0;
   margin-bottom: 0.25rem;
   font-size: 1.09375rem;
   text-transform: uppercase;
 }
 
 .what-we-do__item-text {
+  margin: 0;
   color: #878787;
   font-size: 0.9375rem;
   font-weight: 400;
@@ -801,6 +811,7 @@ button {
 }
 
 .product-desc__title {
+  margin-top: 0;
   margin-bottom: 0.625rem;
   color: #7050e5;
   font-size: 2.5rem;
@@ -959,6 +970,7 @@ button {
 }
 
 .contact__title {
+  margin: 0;
   color: #fff;
   font-size: 2.5rem;
 }
@@ -1097,6 +1109,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 0;
   margin-bottom: 0.8rem;
   color: #ff8b00;
   font-size: 0.9375rem;
@@ -1155,6 +1168,7 @@ button {
 }
 
 .footer-bottom__copyright {
+  margin: 0;
   color: #fff;
   font-size: 0.6875rem;
   font-weight: 400;

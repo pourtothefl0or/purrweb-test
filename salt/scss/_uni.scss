@@ -58,4 +58,17 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+.btn-reset {
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 // === / UNI ===

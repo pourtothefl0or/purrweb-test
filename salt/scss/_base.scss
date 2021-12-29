@@ -11,12 +11,11 @@ html {
 }
 
 *, *::before, *::after {
-    margin: 0;
-    padding: 0;
     box-sizing: inherit;
 }
 
 body {
+    margin: 0;
     background-color: $color-white;
     @include proximanova();
     font-weight: $font-weight-semibold;
@@ -30,14 +29,5 @@ h2 {
 a {
     color: $color-white;
     text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-button {
-    background: 0;
-    border: 0;
 }
 // === / BASE ===
