@@ -54,7 +54,7 @@ modalOverlay.addEventListener('click', (e) => {
         modalOverlay.classList.remove('modal-overlay--visible');
         modals.forEach((el) => {
             el.classList.remove('modal--visible');
-            body.style.overflowY = 'hidden';
+            body.style.overflowY = '';
         });
     }
 });
